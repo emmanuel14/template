@@ -2,27 +2,44 @@ package ar.fiuba.tdd.tp0;
 
 public class LinkedList<T> {
     private Node<T> head;
+    private Node<T> last;
 
-    public LinkedList(){
-        this.head = new NodeNull<T>();
+    public LinkedList() {
+        this.head = null;
     }
 
-    public void add(T data){
-        addLast(head, head.getNext(), data);
+    public void Add(T data) {
+        Node<T> node = new Node<T>(data);
+
+        if (this.head == null) {
+            this.head = node;
+        } else {
+            last.SetNext(node);
+        }
+
+        this.last = node;
     }
 
-    public T first() { return this.head.getData(); }
-
-    private void addLast(Node<T> node, Node<T> nodeNext, T data){
-        addLast(nodeNext, nodeNext.getNext(), data);
+    public boolean IsEmpty() {
+        return this.head == null;
     }
 
-    private void addLast(NodeNull node, Node<T> nodeNext, T data){
-        head = new Node<T>(data);
+    public T GetFirst() {
+        return this.head.GetData();
     }
 
-    private void addLast(Node<T> node, NodeNull nodeNext, T data){
-        node.setNext(new Node<T>(data));
+    public void RemoveFirst() {
+        this.head = this.head.GetNext();
     }
 
+    public int Size() {
+        return Count(this.head, 0);
+    }
+
+    private int Count(Node<T> node, int size) {
+        if (node == null)
+            return size;
+        else
+            return Count(node.GetNext(), ++size);
+    }
 }
