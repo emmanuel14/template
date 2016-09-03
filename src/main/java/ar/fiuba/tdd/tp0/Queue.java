@@ -1,13 +1,13 @@
 package ar.fiuba.tdd.tp0;
 
-public interface Queue<T> {
+interface Queue<T> {
     boolean isEmpty();
 
     int size();
 
-    void add(T item); // agregar un item
+    void add(T item);
 
-    T top(); // retornar el primer item, lanzar exception si esta vacío.
+    T top();
 
-    void remove(); // remover el primer item, lanzar exception si esta vacío.
+    void remove();
 }
