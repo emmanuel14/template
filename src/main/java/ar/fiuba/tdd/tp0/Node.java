@@ -1,6 +1,6 @@
 package ar.fiuba.tdd.tp0;
 
-public class Node<T> {
+class Node<T> {
     private T data;
 
     private Node<T> next = null;
@@ -9,15 +9,15 @@ public class Node<T> {
         this.data = data;
     }
 
-    public Node<T> GetNext() {
+    public Node<T> getNext() {
         return this.next;
     }
 
-    public void SetNext(Node<T> node) {
+    public void setNext(Node<T> node) {
         this.next = node;
     }
 
-    public T GetData() {
+    public T getData() {
         return this.data;
     }
 }

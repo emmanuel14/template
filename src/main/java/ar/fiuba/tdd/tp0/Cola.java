@@ -9,22 +9,22 @@ public class Cola<T> implements Queue<T> {
     }
 
     public boolean isEmpty() {
-        return this.listaEnlazada.IsEmpty();
+        return this.listaEnlazada.isEmpty();
     }
 
     public int size() {
-        return this.listaEnlazada.Size();
+        return this.listaEnlazada.size();
     }
 
     public void add(T item) {
-        this.listaEnlazada.Add(item);
+        this.listaEnlazada.add(item);
     }
 
     public T top() {
-        return this.listaEnlazada.GetFirst();
+        return this.listaEnlazada.getFirst();
     }
 
     public void remove() {
-        this.listaEnlazada.RemoveFirst();
+        this.listaEnlazada.removeFirst();
     }
 }

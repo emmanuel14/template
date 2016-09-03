@@ -8,38 +8,39 @@ public class LinkedList<T> {
         this.head = null;
     }
 
-    public void Add(T data) {
+    public void add(T data) {
         Node<T> node = new Node<T>(data);
 
         if (this.head == null) {
             this.head = node;
         } else {
-            last.SetNext(node);
+            last.setNext(node);
         }
 
         this.last = node;
     }
 
-    public boolean IsEmpty() {
+    public boolean isEmpty() {
         return this.head == null;
     }
 
-    public T GetFirst() {
-        return this.head.GetData();
+    public T getFirst() {
+        return this.head.getData();
     }
 
-    public void RemoveFirst() {
-        this.head = this.head.GetNext();
+    public void removeFirst() {
+        this.head = this.head.getNext();
     }
 
-    public int Size() {
-        return Count(this.head, 0);
+    public int size() {
+        return count(this.head, 0);
     }
 
-    private int Count(Node<T> node, int size) {
-        if (node == null)
+    private int count(Node<T> node, int size) {
+        if (node == null) {
             return size;
-        else
-            return Count(node.GetNext(), ++size);
+        } else {
+            return count(node.getNext(), ++size);
+        }
     }
 }
