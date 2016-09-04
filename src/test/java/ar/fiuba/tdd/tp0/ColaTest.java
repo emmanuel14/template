@@ -38,4 +38,20 @@ public class ColaTest {
         Assert.assertEquals("segundo", cola.top());
     }
 
+    @Test(expected = AssertionError.class)
+    public void topAssertionError() {
+        cola.remove();
+        cola.remove();
+        cola.remove();
+        cola.top();
+    }
+
+    @Test(expected = AssertionError.class)
+    public void removeAssertionError() {
+        cola.remove();
+        cola.remove();
+        cola.remove();
+        cola.remove();
+    }
+
 }

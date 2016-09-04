@@ -21,10 +21,18 @@ public class Cola<T> implements Queue<T> {
     }
 
     public T top() {
-        return this.listaEnlazada.getFirst();
+        if (this.isEmpty()) {
+            throw new AssertionError();
+        } else {
+            return this.listaEnlazada.getFirst();
+        }
     }
 
     public void remove() {
-        this.listaEnlazada.removeFirst();
+        if (this.isEmpty()) {
+            throw new AssertionError();
+        } else {
+            this.listaEnlazada.removeFirst();
+        }
     }
 }
